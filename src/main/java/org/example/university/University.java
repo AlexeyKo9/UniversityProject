@@ -1,4 +1,4 @@
-package org.example.University;
+package org.example.university;
 
 public class University {
     String id;
@@ -7,12 +7,8 @@ public class University {
     int yearOfFoundation;
     StudyProfile mainProfile;
 
-    public University(String id, String fullName, String shortName, int yearOfFoundation, StudyProfile mainProfile) {
-        this.id = id;
-        this.fullName = fullName;
-        this.shortName = shortName;
-        this.yearOfFoundation = yearOfFoundation;
-        this.mainProfile = mainProfile;
+    public University() {
+
     }
 
     public String getId() {
@@ -61,11 +57,18 @@ public class University {
     }
     @Override
     public String toString() {
-        return "№ Университета: " + getId() + ";"
+        return String.format("№ Университета: %s, Наименование университета: %s, Сокращенное название университета: %s, Год основания университета: %s, Профиль обучения: %s",
+                this.id,
+                this.fullName,
+                this.shortName,
+                this.yearOfFoundation,
+                this.mainProfile.getProfileName());
+
+                /*"№ Университета: " + getId() + ";"
                 + "\n Наименование университета: " + getFullName() + ";"
                 + "\n Сокращенное название университета: " + getShortName() + ";"
                 + "\n Год основания университета: " + getYearOfFoundation() + ";"
-                + "\n Профиль обучения: " + getMainProfile().getProfileName() + ".";
+                + "\n Профиль обучения: " + getMainProfile().getProfileName() + ".";*/
     }
 }
 

@@ -1,10 +1,13 @@
-package org.example.University;
+package org.example.university;
 
 public enum StudyProfile {
 
     MEDICINE("Медицина"),
     IT("Информационные технологии"),
-    ENGINEERING("Инженерия");
+    ENGINEERING("Инженерия"),
+    LINGUISTICS("Лингвистика"),
+    PHYSICS("Физика"),
+    MATHEMATICS("Математика");
 
     private String profileName;
 

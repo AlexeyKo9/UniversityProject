@@ -1,4 +1,4 @@
-package org.example.Student;
+package org.example.student;
 
 public class Student {
     String fullName;
@@ -6,11 +6,8 @@ public class Student {
     int currentCourseNumber;
     float avgExamScore;
 
-    public Student(String fullName, String universityId, int currentCourseNumber, float avgExamScore) {
-        this.fullName = fullName;
-        this.universityId = universityId;
-        this.currentCourseNumber = currentCourseNumber;
-        this.avgExamScore = avgExamScore;
+    public Student() {
+
     }
 
     public String getFullName() {
@@ -50,9 +47,15 @@ public class Student {
     }
     @Override
     public String toString() {
-        return "ФИО студента: " + getFullName() + ";"
+        return String.format("ФИО студента: %s, № Университета: %s, № Текущего курса: %s, Средний балл экзамена: %s",
+                this.fullName,
+                this.universityId,
+                this.currentCourseNumber,
+                this.avgExamScore);
+
+                /*"ФИО студента: " + getFullName() + ";"
                 + "\n № Университета: " + getUniversityId() + ";"
                 + "\n № Текущего курса: " + getCurrentCourseNumber() + ";"
-                + "\n Средний балл экзамена: " + getAvgExamScore() + ".";
+                + "\n Средний балл экзамена: " + getAvgExamScore() + "."; */
     }
 }
