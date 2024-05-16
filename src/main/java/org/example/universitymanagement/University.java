@@ -1,4 +1,6 @@
-package org.example.university;
+package org.example.universitymanagement;
+
+import org.example.enums.StudyProfile;
 
 public class University {
     String id;
@@ -55,6 +57,7 @@ public class University {
         this.mainProfile = mainProfile;
         return this;
     }
+
     @Override
     public String toString() {
         return String.format("№ Университета: %s, Наименование университета: %s, Сокращенное название университета: %s, Год основания университета: %s, Профиль обучения: %s",
@@ -63,12 +66,6 @@ public class University {
                 this.shortName,
                 this.yearOfFoundation,
                 this.mainProfile.getProfileName());
-
-                /*"№ Университета: " + getId() + ";"
-                + "\n Наименование университета: " + getFullName() + ";"
-                + "\n Сокращенное название университета: " + getShortName() + ";"
-                + "\n Год основания университета: " + getYearOfFoundation() + ";"
-                + "\n Профиль обучения: " + getMainProfile().getProfileName() + ".";*/
     }
 }
 

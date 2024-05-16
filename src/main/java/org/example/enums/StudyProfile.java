@@ -1,4 +1,4 @@
-package org.example.university;
+package org.example.enums;
 
 public enum StudyProfile {
 

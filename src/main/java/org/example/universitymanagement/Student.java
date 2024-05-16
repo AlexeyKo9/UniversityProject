@@ -1,4 +1,4 @@
-package org.example.student;
+package org.example.universitymanagement;
 
 public class Student {
     String fullName;
@@ -45,6 +45,7 @@ public class Student {
         this.avgExamScore = avgExamScore;
         return this;
     }
+
     @Override
     public String toString() {
         return String.format("ФИО студента: %s, № Университета: %s, № Текущего курса: %s, Средний балл экзамена: %s",
@@ -52,10 +53,5 @@ public class Student {
                 this.universityId,
                 this.currentCourseNumber,
                 this.avgExamScore);
-
-                /*"ФИО студента: " + getFullName() + ";"
-                + "\n № Университета: " + getUniversityId() + ";"
-                + "\n № Текущего курса: " + getCurrentCourseNumber() + ";"
-                + "\n Средний балл экзамена: " + getAvgExamScore() + "."; */
     }
 }

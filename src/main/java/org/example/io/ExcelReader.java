@@ -3,9 +3,9 @@ package org.example.io;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.example.student.Student;
-import org.example.university.StudyProfile;
-import org.example.university.University;
+import org.example.universitymanagement.Student;
+import org.example.enums.StudyProfile;
+import org.example.universitymanagement.University;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class ExcelReader {
             university.setId(currentRow.getCell(0).getStringCellValue());
             university.setFullName(currentRow.getCell(1).getStringCellValue());
             university.setShortName(currentRow.getCell(2).getStringCellValue());
-            university.setYearOfFoundation((int)currentRow.getCell(3).getNumericCellValue());
+            university.setYearOfFoundation((int) currentRow.getCell(3).getNumericCellValue());
             university.setMainProfile(StudyProfile.valueOf(
                     StudyProfile.class, currentRow.getCell(4).getStringCellValue()));
         }
@@ -60,8 +60,8 @@ public class ExcelReader {
             students.add(student);
             student.setUniversityId(currentRow.getCell(0).getStringCellValue());
             student.setFullName(currentRow.getCell(1).getStringCellValue());
-            student.setCurrentCourseNumber((int)currentRow.getCell(2).getNumericCellValue());
-            student.setAvgExamScore((float)currentRow.getCell(3).getNumericCellValue());
+            student.setCurrentCourseNumber((int) currentRow.getCell(2).getNumericCellValue());
+            student.setAvgExamScore((float) currentRow.getCell(3).getNumericCellValue());
         }
 
         return students;
