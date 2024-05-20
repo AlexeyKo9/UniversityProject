@@ -18,5 +18,4 @@ public enum StudyProfile {
     public String getProfileName() {
         return profileName;
     }
-
 }
