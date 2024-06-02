@@ -1,12 +1,18 @@
 package org.example.universitymanagement;
 
+import com.google.gson.annotations.SerializedName;
 import org.example.enums.StudyProfile;
 
 public class University {
+    @SerializedName("№ Университета")
     String id;
+    @SerializedName("Наименование университета")
     String fullName;
+    @SerializedName("Сокращенное название университета")
     String shortName;
+    @SerializedName("Год основания")
     int yearOfFoundation;
+    @SerializedName("Профиль обучения")
     StudyProfile mainProfile;
 
     public University() {
