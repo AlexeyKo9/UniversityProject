@@ -53,6 +53,6 @@ public class Main {
         });
 
         List<Statistics> statisticsList = StatisticsUtil.createStatistics(students, universities);
-        XlsWriter.writeXlsStatistics(statisticsList, "statistics.xlsx");
+        XlsWriter.writeXlsStatistics(statisticsList, "src/main/output/statistics1.xlsx");
     }
 }
