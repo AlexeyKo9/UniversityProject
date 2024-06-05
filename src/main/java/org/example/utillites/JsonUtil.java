@@ -3,8 +3,8 @@ package org.example.utillites;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import org.example.universitymanagement.Student;
-import org.example.universitymanagement.University;
+import org.example.model.Student;
+import org.example.model.University;
 
 import java.util.List;
 

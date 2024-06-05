@@ -1,11 +1,11 @@
-package org.example.utillites;
+package org.example.xls;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.example.universitymanagement.Student;
+import org.example.model.Student;
 import org.example.enums.StudyProfile;
-import org.example.universitymanagement.University;
+import org.example.model.University;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ExcelReader {
-    private ExcelReader() {
+public class XlsReader {
+    private XlsReader() {
     }
 
     public static List<University> readUniversities(String filePath) throws IOException {

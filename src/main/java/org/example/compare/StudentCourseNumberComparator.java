@@ -1,6 +1,6 @@
 package org.example.compare;
 
-import org.example.universitymanagement.Student;
+import org.example.model.Student;
 
 public class StudentCourseNumberComparator implements StudentComparator{
     @Override

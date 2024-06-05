@@ -5,11 +5,14 @@ import org.example.compare.UniversityComparator;
 import org.example.compare.StudentComparator;
 import org.example.enums.StudentComparatorEnum;
 import org.example.enums.UniversityComparatorEnum;
+import org.example.model.Statistics;
 import org.example.utillites.ComparatorUtil;
-import org.example.utillites.ExcelReader;
-import org.example.universitymanagement.Student;
-import org.example.universitymanagement.University;
+import org.example.utillites.StatisticsUtil;
+import org.example.xls.XlsReader;
+import org.example.model.Student;
+import org.example.model.University;
 import org.example.utillites.JsonUtil;
+import org.example.xls.XlsWriter;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,7 +21,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         List<University> universities =
-                ExcelReader.readUniversities("src/main/resources/universityInfo.xlsx");
+                XlsReader.readUniversities("src/main/resources/universityInfo.xlsx");
         UniversityComparator universityComparator =
                 ComparatorUtil.getUniversityComparator(UniversityComparatorEnum.ID);
         universities.sort(universityComparator);
@@ -34,7 +37,7 @@ public class Main {
         });
 
         List<Student> students =
-                ExcelReader.readStudents("src/main/resources/universityInfo.xlsx");
+                XlsReader.readStudents("src/main/resources/universityInfo.xlsx");
         StudentComparator studentComparator =
                 ComparatorUtil.getStudentComparator(StudentComparatorEnum.AVG_EXAM_SCORE);
         students.sort(studentComparator);
@@ -48,5 +51,8 @@ public class Main {
             Student studentFromJson = JsonUtil.jsonToStudent(studentJson);
             System.out.println(studentFromJson);
         });
+
+        List<Statistics> statisticsList = StatisticsUtil.createStatistics(students, universities);
+        XlsWriter.writeXlsStatistics(statisticsList, "statistics.xlsx");
     }
 }

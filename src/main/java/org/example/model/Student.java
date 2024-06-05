@@ -1,4 +1,4 @@
-package org.example.universitymanagement;
+package org.example.model;
 
 import com.google.gson.annotations.SerializedName;
 
