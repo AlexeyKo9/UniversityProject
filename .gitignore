@@ -39,3 +39,4 @@ build/
 .DS_Store
 /.idea/
 
+/logfile.xml.0
