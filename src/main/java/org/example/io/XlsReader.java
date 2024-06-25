@@ -1,4 +1,4 @@
-package org.example.xls;
+package org.example.io;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -22,7 +22,7 @@ public class XlsReader {
     private XlsReader() {
     }
 
-    public static List<University> readUniversities(String filePath) throws IOException {
+    public static List<University> readUniversities(String filePath) {
 
         List<University> universities = new ArrayList<>();
 
@@ -57,7 +57,7 @@ public class XlsReader {
         return universities;
     }
 
-    public static List<Student> readStudents(String filePath) throws IOException {
+    public static List<Student> readStudents(String filePath) {
 
         List<Student> students = new ArrayList<>();
 

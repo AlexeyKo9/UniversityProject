@@ -1,4 +1,4 @@
-package org.example.xls;
+package org.example.io;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -19,7 +19,7 @@ public class XlsWriter {
     private static final Logger logger = Logger.getLogger(XlsWriter.class.getName());
 
     public static void writeXlsStatistics(List<Statistics> statisticsList,
-                                          String filePath) throws IOException {
+                                          String filePath) {
 
         logger.log(Level.INFO, "Excel writing started");
 

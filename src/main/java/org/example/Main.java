@@ -4,16 +4,19 @@ import org.example.compare.UniversityComparator;
 import org.example.compare.StudentComparator;
 import org.example.enums.StudentComparatorEnum;
 import org.example.enums.UniversityComparatorEnum;
+import org.example.io.JsonWriter;
+import org.example.io.XmlWriter;
+import org.example.model.FullInfo;
 import org.example.model.Statistics;
 import org.example.utillites.ComparatorUtil;
 import org.example.utillites.StatisticsUtil;
-import org.example.xls.XlsReader;
+import org.example.io.XlsReader;
 import org.example.model.Student;
 import org.example.model.University;
-import org.example.utillites.JsonUtil;
-import org.example.xls.XlsWriter;
+import org.example.io.XlsWriter;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -24,7 +27,7 @@ public class Main {
 
     private static final Logger logger = Logger.getLogger(Main.class.getName());
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         try {
             LogManager.getLogManager().readConfiguration(
@@ -49,6 +52,15 @@ public class Main {
 
         List<Statistics> statisticsList = StatisticsUtil.createStatistics(students, universities);
         XlsWriter.writeXlsStatistics(statisticsList, "src/main/output/statistics.xlsx");
+
+        FullInfo fullInfo = new FullInfo()
+                .setStudentList(students)
+                .setUniversityList(universities)
+                .setStatisticsList(statisticsList)
+                .setProcessDate(new Date());
+
+        XmlWriter.generateXmlReq(fullInfo);
+        JsonWriter.writeJsonReq(fullInfo);
 
         logger.log(INFO, "Application finished");
     }

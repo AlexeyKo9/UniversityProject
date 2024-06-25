@@ -3,20 +3,35 @@ package org.example.model;
 import com.google.gson.annotations.SerializedName;
 import org.example.enums.StudyProfile;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class University {
-    @SerializedName("№ Университета")
-    String id;
-    @SerializedName("Наименование университета")
-    String fullName;
-    @SerializedName("Сокращенное название университета")
-    String shortName;
-    @SerializedName("Год основания")
-    int yearOfFoundation;
-    @SerializedName("Профиль обучения")
-    StudyProfile mainProfile;
+
+    @SerializedName("universityId")
+    @XmlElement(name = "universityId")
+    private String id;
+
+    @SerializedName("universityName")
+    @XmlElement(name = "universityName")
+    private String fullName;
+
+    @SerializedName("universityShortName")
+    @XmlTransient
+    private String shortName;
+
+    @SerializedName("foundation")
+    @XmlTransient
+    private int yearOfFoundation;
+
+    @SerializedName("profile")
+    @XmlElement(name = "universityProfile")
+    private StudyProfile mainProfile;
 
     public University() {
-
     }
 
     public String getId() {
@@ -66,7 +81,7 @@ public class University {
 
     @Override
     public String toString() {
-        return String.format("№ Университета: %s, Наименование университета: %s, Сокращенное название университета: %s, Год основания университета: %s, Профиль обучения: %s",
+        return String.format("id = %s, fullName = %s, shortName = %s, yearOfFoundation = %s, mainProfile = %s",
                 this.id,
                 this.fullName,
                 this.shortName,
@@ -74,4 +89,3 @@ public class University {
                 this.mainProfile.getProfileName());
     }
 }
-
